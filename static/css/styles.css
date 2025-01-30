@@ -55,3 +55,22 @@ ul {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input, button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}
