@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <h2>Your Friends</h2>
+        <ul>
+            {% for friend in friends %}
+                <li>{{ friend }}</li>
+            {% endfor %}
+        </ul>
+        <form method="POST" action="/send_coins">
+            <input type="text" name="recipient" placeholder="Recipient Username" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <button type="submit">Send Coins</button>
+        </form>
+        <form method="POST" action="/add_friend">
+            <input type="text" name="friend_id" placeholder="Add Friend Username" required>
+            <button type="submit">Add Friend</button>
+        </form>
+        <a href="/chat">Go to Chat</a>
+    </div>
+</body>
+</html>
